@@ -1,0 +1,19 @@
+{
+  "name": "matex",
+  "version": "1.0.0",
+  "description": "Online system for maths camps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techtabor/matex.git"
+  },
+  "author": "Benedek, Dani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techtabor/matex/issues"
+  },
+  "homepage": "https://github.com/techtabor/matex#readme"
+}
