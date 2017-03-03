@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>MateX</title>
+
+    <link rel="stylesheet" type="text/css" href="frontend.css">
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-top">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>MateX</h1>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs nav-justified" style="margin-top: 2px">
+        <li role="presentation"><a href="frontend_kezdolap.html">Kezdőlap</a></li>
+        <li role="presentation" class="active"><a href="#">Profilom</a></li>
+        <li role="presentation" class="disabled"><a href="#">Üzenetek</a></li>
+        <li role="presentation" class="disabled"><a href="#">Feladatok</a></li>
+        <li role="presentation" class="disabled"><a href="#">A MateXról</a></li>
+      </ul>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Az ember neve</h3>
+              <h4>Pozíció</h4> <!-- Diák, Segítő, Tanár, még más? (pl. Fejlesztő - én, Táboralapító, esetleg állatnév) -->
+            </div> 
+          </div>
+
+          </br>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Születési dátum: születési dátuma</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Csoport: csoportja</p>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-8">
+              <p>Email cím: <span id="email">email címe</span></p>
+            </div>
+            <button type="button" id="email-btn" onclick="emailChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function emailChange() {
+              var email = document.getElementById("email").innerHTML;
+              var emailInput = '<div class="profileinput"><div class="input-group"><input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon2" id="emailInput"></div></div>';
+              document.getElementById("email").innerHTML = emailInput;
+              document.getElementById("emailInput").setAttribute("value", email);
+              document.getElementById("email-btn").innerHTML = 'Mentés';
+              document.getElementById("email-btn").setAttribute("onclick", "emailSave()");
+            }
+
+            function emailSave() {
+              var email = document.getElementById("emailInput").value;
+              document.getElementById("email").innerHTML = email;
+              document.getElementById("email-btn").innerHTML = 'Változtatás';
+              document.getElementById("email-btn").setAttribute("onclick", "emailChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Telefonszám: <span id="phone">telefonszáma</span></p>
+            </div>
+            <button type="button" id="phone-btn" onclick="phoneChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function phoneChange() {
+              var phone = document.getElementById("phone").innerHTML;
+              var phoneInput = '<div class="profileinput"><div class="input-group"><input type="tel" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="phoneInput"></div></div>';
+              document.getElementById("phone").innerHTML = phoneInput;
+              document.getElementById("phoneInput").setAttribute("value", phone);
+              document.getElementById("phone-btn").innerHTML = 'Mentés';
+              document.getElementById("phone-btn").setAttribute("onclick", "phoneSave()");
+            }
+
+            function phoneSave() {
+              var phone = document.getElementById("phoneInput").value;
+              document.getElementById("phone").innerHTML = phone;
+              document.getElementById("phone-btn").innerHTML = 'Változtatás';
+              document.getElementById("phone-btn").setAttribute("onclick", "phoneChange()");
+            }
+          </script>
+
+          <br>
+
+          <h4>Egyik szülő</h4>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Egyik szülő neve: <span id="firstParentName">egyik szülő név</span></p>
+            </div>
+            <button type="button" id="firstParentName-btn" onclick="firstParentNameChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function firstParentNameChange() {
+              var firstParentName = document.getElementById("firstParentName").innerHTML;
+              var firstParentNameInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Név" aria-describedby="basic-addon2" id="firstParentNameInput"></div></div>';
+              document.getElementById("firstParentName").innerHTML = firstParentNameInput;
+              document.getElementById("firstParentNameInput").setAttribute("value", firstParentName);
+              document.getElementById("firstParentName-btn").innerHTML = 'Mentés';
+              document.getElementById("firstParentName-btn").setAttribute("onclick", "firstParentNameSave()");
+            }
+
+            function firstParentNameSave() {
+              var firstParentName = document.getElementById("firstParentNameInput").value;
+              document.getElementById("firstParentName").innerHTML = firstParentName;
+              document.getElementById("firstParentName-btn").innerHTML = 'Változtatás';
+              document.getElementById("firstParentName-btn").setAttribute("onclick", "firstParentNameChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Egyik szülő email címe: <span id="firstParentEmail">egyik szülő email címe</span></p>
+            </div>
+            <button type="button" id="firstParentEmail-btn" onclick="firstParentEmailChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function firstParentEmailChange() {
+              var firstParentEmail = document.getElementById("firstParentEmail").innerHTML;
+              var firstParentEmailInput = '<div class="profileinput"><div class="input-group"><input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon2" id="firstParentEmailInput"></div></div>';
+              document.getElementById("firstParentEmail").innerHTML = firstParentEmailInput;
+              document.getElementById("firstParentEmailInput").setAttribute("value", firstParentEmail);
+              document.getElementById("firstParentEmail-btn").innerHTML = 'Mentés';
+              document.getElementById("firstParentEmail-btn").setAttribute("onclick", "firstParentEmailSave()");
+            }
+
+            function firstParentEmailSave() {
+              var firstParentEmail = document.getElementById("firstParentEmailInput").value;
+              document.getElementById("firstParentEmail").innerHTML = firstParentEmail;
+              document.getElementById("firstParentEmail-btn").innerHTML = 'Változtatás';
+              document.getElementById("firstParentEmail-btn").setAttribute("onclick", "firstParentEmailChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Egyik szülő telefonszáma: <span id="firstParentPhone">egyik szülő telefonszáma</span></p>
+            </div>
+            <button type="button" id="firstParentPhone-btn" onclick="firstParentPhoneChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function firstParentPhoneChange() {
+              var firstParentPhone = document.getElementById("firstParentPhone").innerHTML;
+              var firstParentPhoneInput = '<div class="profileinput"><div class="input-group"><input type="tel" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="firstParentPhoneInput"></div></div>';
+              document.getElementById("firstParentPhone").innerHTML = firstParentPhoneInput;
+              document.getElementById("firstParentPhoneInput").setAttribute("value", firstParentPhone);
+              document.getElementById("firstParentPhone-btn").innerHTML = 'Mentés';
+              document.getElementById("firstParentPhone-btn").setAttribute("onclick", "firstParentPhoneSave()");
+            }
+
+            function firstParentPhoneSave() {
+              var firstParentPhone = document.getElementById("firstParentPhoneInput").value;
+              document.getElementById("firstParentPhone").innerHTML = firstParentPhone;
+              document.getElementById("firstParentPhone-btn").innerHTML = 'Változtatás';
+              document.getElementById("firstParentPhone-btn").setAttribute("onclick", "firstParentPhoneChange()");
+            }
+          </script>
+
+          <br>
+
+          <h4>Másik szülő</h4>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Másik szülő neve: <span id="secondParentName">másik szülő név</span></p>
+            </div>
+            <button type="button" id="secondParentName-btn" onclick="secondParentNameChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function secondParentNameChange() {
+              var secondParentName = document.getElementById("secondParentName").innerHTML;
+              var secondParentNameInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Név" aria-describedby="basic-addon2" id="secondParentNameInput"></div></div>';
+              document.getElementById("secondParentName").innerHTML = secondParentNameInput;
+              document.getElementById("secondParentNameInput").setAttribute("value", secondParentName);
+              document.getElementById("secondParentName-btn").innerHTML = 'Mentés';
+              document.getElementById("secondParentName-btn").setAttribute("onclick", "secondParentNameSave()");
+            }
+
+            function secondParentNameSave() {
+              var secondParentName = document.getElementById("secondParentNameInput").value;
+              document.getElementById("secondParentName").innerHTML = secondParentName;
+              document.getElementById("secondParentName-btn").innerHTML = 'Változtatás';
+              document.getElementById("secondParentName-btn").setAttribute("onclick", "secondParentNameChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Másik szülő email címe: <span id="secondParentEmail">másik szülő email címe</span></p>
+            </div>
+            <button type="button" id="secondParentEmail-btn" onclick="secondParentEmailChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function secondParentEmailChange() {
+              var secondParentEmail = document.getElementById("secondParentEmail").innerHTML;
+              var secondParentEmailInput = '<div class="profileinput"><div class="input-group"><input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon2" id="secondParentEmailInput"></div></div>';
+              document.getElementById("secondParentEmail").innerHTML = secondParentEmailInput;
+              document.getElementById("secondParentEmailInput").setAttribute("value", secondParentEmail);
+              document.getElementById("secondParentEmail-btn").innerHTML = 'Mentés';
+              document.getElementById("secondParentEmail-btn").setAttribute("onclick", "secondParentEmailSave()");
+            }
+
+            function secondParentEmailSave() {
+              var secondParentEmail = document.getElementById("secondParentEmailInput").value;
+              document.getElementById("secondParentEmail").innerHTML = secondParentEmail;
+              document.getElementById("secondParentEmail-btn").innerHTML = 'Változtatás';
+              document.getElementById("secondParentEmail-btn").setAttribute("onclick", "secondParentEmailChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Másik szülő telefonszáma: <span id="secondParentPhone">másik szülő telefonszáma</span></p>
+            </div>
+            <button type="button" id="secondParentPhone-btn" onclick="secondParentPhoneChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function secondParentPhoneChange() {
+              var secondParentPhone = document.getElementById("secondParentPhone").innerHTML;
+              var secondParentPhoneInput = '<div class="profileinput"><div class="input-group"><input type="tel" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="secondParentPhoneInput"></div></div>';
+              document.getElementById("secondParentPhone").innerHTML = secondParentPhoneInput;
+              document.getElementById("secondParentPhoneInput").setAttribute("value", secondParentPhone);
+              document.getElementById("secondParentPhone-btn").innerHTML = 'Mentés';
+              document.getElementById("secondParentPhone-btn").setAttribute("onclick", "secondParentPhoneSave()");
+            }
+
+            function secondParentPhoneSave() {
+              var secondParentPhone = document.getElementById("secondParentPhoneInput").value;
+              document.getElementById("secondParentPhone").innerHTML = secondParentPhone;
+              document.getElementById("secondParentPhone-btn").innerHTML = 'Változtatás';
+              document.getElementById("secondParentPhone-btn").setAttribute("onclick", "secondParentPhoneChange()");
+            }
+          </script>
+
+        </div> <!-- first row's size -->
+
+        <div class="col-md-4">
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="profilePic1" id="profilePicDiv">
+              <img src="prof.jpg" id="profilePic" />
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div id="photoButton">
+              <label class="btn btn-default btn-file" style="width:220px" onchange="previewFile()">
+                Profilkép megváltoztatása <input type="file" accept="image/*" style="display: none">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          function previewFile(){
+            var preview = document.querySelector('img');
+            var file    = document.querySelector('input[type=file]').files[0];
+            var reader  = new FileReader();
+            reader.onloadend = function () {
+              preview.src = reader.result;
+            }
+            
+            $('img').on('load', function () {
+              var imageWidth = $('#profilePic').width();
+              var imageHeight = $('#profilePic').height();
+
+              if (imageWidth < imageHeight) {
+                document.getElementById("profilePicDiv").setAttribute("class", "profilePic2");
+              } else {
+                document.getElementById("profilePicDiv").setAttribute("class", "profilePic1");
+              }
+            });
+
+            if (file) {
+              reader.readAsDataURL(file);
+            } else {
+              preview.src = "";
+            }
+
+            document.getElementById("photoButton").innerHTML = '<button type="button" style="width:110px" class="btn btn-success btn-s" onclick="photoSave()">Mentés</button><button type="button" style="width:110px" class="btn btn-danger btn-s" onclick="photoSave()">Mégse</button>'
+          }
+
+          function photoSave() {
+            document.getElementById("photoButton").innerHTML = '<label class="btn btn-default btn-file" style="width:220px" onchange="previewFile()">Profilkép megváltoztatása <input type="file" accept="image/*" style="display: none" id="newPhoto"></label>'
+          }
+        </script>
+
+        </div>
+
+      </div> <!-- first "row" -->
+
+    <div> <!-- container -->
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

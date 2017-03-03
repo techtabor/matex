@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>MateX</title>
+
+    <link rel="stylesheet" type="text/css" href="frontend.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-top">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>MateX</h1>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs nav-justified">
+        <li role="presentation"><a href="#">Kezdőlap</a></li>
+        <li role="presentation" class="active"><a href="#">Profil</a></li>
+        <li role="presentation"><a href="#">Üzenetek</a></li>
+        <li role="presentation"><a href="#">Feladatok</a></li>
+        <li role="presentation"><a href="#">A MateXról</a></li>
+      </ul>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Dobák Dani</h3>
+            </div>
+          </div>
+
+          </br>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Születési dátum: 2000.09.01.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Csoport: Beluga</p>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-8">
+              <p>Email cím: <span id="email">ragogumi2000@gmail.com</span></p>
+            </div>
+            <button type="button" id="email-btn" onclick="emailChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function emailChange() {
+              var email = document.getElementById("email").innerHTML;
+              var emailInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2" id="emailInput"></div></div>';
+              document.getElementById("email").innerHTML = emailInput;
+              document.getElementById("emailInput").setAttribute("value", email);
+              document.getElementById("email-btn").innerHTML = 'Mentés';
+              document.getElementById("email-btn").setAttribute("onclick", "emailSave()");
+            }
+
+            function emailSave() {
+              var email = document.getElementById("emailInput").value;
+              document.getElementById("email").innerHTML = email;
+              document.getElementById("email-btn").innerHTML = 'Változtatás';
+              document.getElementById("email-btn").setAttribute("onclick", "emailChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Telefonszám: <span id="phone">06306335515</span></p>
+            </div>
+            <button type="button" id="phone-btn" onclick="phoneChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function phoneChange() {
+              var phone = document.getElementById("phone").innerHTML;
+              var phoneInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="phoneInput"></div></div>';
+              document.getElementById("phone").innerHTML = phoneInput;
+              document.getElementById("phoneInput").setAttribute("value", phone);
+              document.getElementById("phone-btn").innerHTML = 'Mentés';
+              document.getElementById("phone-btn").setAttribute("onclick", "phoneSave()");
+            }
+
+            function phoneSave() {
+              var phone = document.getElementById("phoneInput").value;
+              document.getElementById("phone").innerHTML = phone;
+              document.getElementById("phone-btn").innerHTML = 'Változtatás';
+              document.getElementById("phone-btn").setAttribute("onclick", "phoneChange()");
+            }
+          </script>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Anya neve: <span id="momName">Vári Eszter</span></p>
+            </div>
+            <button type="button" id="momName-btn" onclick="momNameChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function momNameChange() {
+              var momName = document.getElementById("momName").innerHTML;
+              var momNameInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="momNameInput"></div></div>';
+              document.getElementById("momName").innerHTML = momNameInput;
+              document.getElementById("momNameInput").setAttribute("value", momName);
+              document.getElementById("momName-btn").innerHTML = 'Mentés';
+              document.getElementById("momName-btn").setAttribute("onclick", "momNameSave()");
+            }
+
+            function momNameSave() {
+              var momName = document.getElementById("momNameInput").value;
+              document.getElementById("momName").innerHTML = momName;
+              document.getElementById("momName-btn").innerHTML = 'Változtatás';
+              document.getElementById("momName-btn").setAttribute("onclick", "momNameChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Anya email címe: <span id="momEmail">varieszter1@gmail.com</span></p>
+            </div>
+            <button type="button" id="momEmail-btn" onclick="momEmailChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function momEmailChange() {
+              var momEmail = document.getElementById("momEmail").innerHTML;
+              var momEmailInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="momEmailInput"></div></div>';
+              document.getElementById("momEmail").innerHTML = momEmailInput;
+              document.getElementById("momEmailInput").setAttribute("value", momEmail);
+              document.getElementById("momEmail-btn").innerHTML = 'Mentés';
+              document.getElementById("momEmail-btn").setAttribute("onclick", "momEmailSave()");
+            }
+
+            function momEmailSave() {
+              var momEmail = document.getElementById("momEmailInput").value;
+              document.getElementById("momEmail").innerHTML = momEmail;
+              document.getElementById("momEmail-btn").innerHTML = 'Változtatás';
+              document.getElementById("momEmail-btn").setAttribute("onclick", "momEmailChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Anya telefonszám: <span id="momPhone">06309707626</span></p>
+            </div>
+            <button type="button" id="momPhone-btn" onclick="momPhoneChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function momPhoneChange() {
+              var momPhone = document.getElementById("momPhone").innerHTML;
+              var momPhoneInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="momPhoneInput"></div></div>';
+              document.getElementById("momPhone").innerHTML = momPhoneInput;
+              document.getElementById("momPhoneInput").setAttribute("value", momPhone);
+              document.getElementById("momPhone-btn").innerHTML = 'Mentés';
+              document.getElementById("momPhone-btn").setAttribute("onclick", "momPhoneSave()");
+            }
+
+            function momPhoneSave() {
+              var momPhone = document.getElementById("momPhoneInput").value;
+              document.getElementById("momPhone").innerHTML = momPhone;
+              document.getElementById("momPhone-btn").innerHTML = 'Változtatás';
+              document.getElementById("momPhone-btn").setAttribute("onclick", "momPhoneChange()");
+            }
+          </script>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Apa neve: <span id="dadName">Dobák András</span></p>
+            </div>
+            <button type="button" id="dadName-btn" onclick="dadNameChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function dadNameChange() {
+              var dadName = document.getElementById("dadName").innerHTML;
+              var dadNameInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="dadNameInput"></div></div>';
+              document.getElementById("dadName").innerHTML = dadNameInput;
+              document.getElementById("dadNameInput").setAttribute("value", dadName);
+              document.getElementById("dadName-btn").innerHTML = 'Mentés';
+              document.getElementById("dadName-btn").setAttribute("onclick", "dadNameSave()");
+            }
+
+            function dadNameSave() {
+              var dadName = document.getElementById("dadNameInput").value;
+              document.getElementById("dadName").innerHTML = dadName;
+              document.getElementById("dadName-btn").innerHTML = 'Változtatás';
+              document.getElementById("dadName-btn").setAttribute("onclick", "dadNameChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Apa email címe: <span id="dadEmail">andras.dobak@gmail.com</span></p>
+            </div>
+            <button type="button" id="dadEmail-btn" onclick="dadEmailChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function dadEmailChange() {
+              var dadEmail = document.getElementById("dadEmail").innerHTML;
+              var dadEmailInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="dadEmailInput"></div></div>';
+              document.getElementById("dadEmail").innerHTML = dadEmailInput;
+              document.getElementById("dadEmailInput").setAttribute("value", dadEmail);
+              document.getElementById("dadEmail-btn").innerHTML = 'Mentés';
+              document.getElementById("dadEmail-btn").setAttribute("onclick", "dadEmailSave()");
+            }
+
+            function dadEmailSave() {
+              var dadEmail = document.getElementById("dadEmailInput").value;
+              document.getElementById("dadEmail").innerHTML = dadEmail;
+              document.getElementById("dadEmail-btn").innerHTML = 'Változtatás';
+              document.getElementById("dadEmail-btn").setAttribute("onclick", "dadEmailChange()");
+            }
+          </script>
+
+          <div class="row">
+            <div class="col-md-8">
+              <p>Apa telefonszám: <span id="dadPhone">06305309919</span></p>
+            </div>
+            <button type="button" id="dadPhone-btn" onclick="dadPhoneChange()" class="btn btn-default btn-xs">Változtatás</button>
+          </div>
+
+          <script type="text/javascript">
+            function dadPhoneChange() {
+              var dadPhone = document.getElementById("dadPhone").innerHTML;
+              var dadPhoneInput = '<div class="profileinput"><div class="input-group"><input type="text" class="form-control" placeholder="Telefonszám" aria-describedby="basic-addon2" id="dadPhoneInput"></div></div>';
+              document.getElementById("dadPhone").innerHTML = dadPhoneInput;
+              document.getElementById("dadPhoneInput").setAttribute("value", dadPhone);
+              document.getElementById("dadPhone-btn").innerHTML = 'Mentés';
+              document.getElementById("dadPhone-btn").setAttribute("onclick", "dadPhoneSave()");
+            }
+
+            function dadPhoneSave() {
+              var dadPhone = document.getElementById("dadPhoneInput").value;
+              document.getElementById("dadPhone").innerHTML = dadPhone;
+              document.getElementById("dadPhone-btn").innerHTML = 'Változtatás';
+              document.getElementById("dadPhone-btn").setAttribute("onclick", "dadPhoneChange()");
+            }
+          </script>
+
+        </div> <!-- first row's size -->
+
+        <div class="col-md-4">
+
+ <div class="row">
+  <div class="col-md-12">
+    <div id="blah">
+      <img id="profileImage" src="profilkep.jpg" />
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-12">
+    <input type="file" onchange="previewFile()">
+  </div>
+</div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    function previewFile(){
+        var preview = document.querySelector('img'); //selects the query named img
+        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+        var reader  = new FileReader();
+
+        reader.onloadend = function () {
+          preview.src = reader.result;
+        }
+
+        $('img').on('load', function () {
+          var imageWidth = $('#profileImage').width();
+          var imageHeight = $('#profileImage').height();
+          console.log(imageWidth);
+          console.log(imageHeight);
+          if (imageWidth < imageHeight) {
+            document.getElementById("blah").setAttribute("class", "blahblah");
+          } else {
+            document.getElementById("blah").setAttribute("class", "profilePic");
+          }
+        });
+
+        if (file) {
+          reader.readAsDataURL(file); //reads the data as a URL
+        } else {
+          preview.src = "";
+        }
+
+      }
+    </script>    
+
+        </div>
+
+      </div> <!-- first "row" -->
+
+    <div> <!-- container -->
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  </body>
+</html>
