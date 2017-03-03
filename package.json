@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/techtabor/matex/issues"
   },
-  "homepage": "https://github.com/techtabor/matex#readme"
+  "homepage": "https://github.com/techtabor/matex#readme",
+  "dependencies": {
+    "express": "^4.15.0"
+  }
 }
