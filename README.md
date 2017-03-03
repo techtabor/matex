@@ -1,3 +1,3 @@
-# matex
+# Matex
 
 After cloning, run ```npm init```.
