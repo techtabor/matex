@@ -2,16 +2,19 @@ var express = require('express');
 var app = express();
 var router = express.Router();
   
-var path = __dirname;
-  
+var path = require('path');
+console.log(path);
+
 app.use('/',router);
+app.use(express.static(path.join(__dirname, 'public')));
+
   
 router.get('/',function(req, res){
-  res.sendFile(path + '/frontend_cdn.html');
+  res.sendFile(__dirname + '/views/frontend_cdn.html');
 });
   
 router.get('/kezdolap',function(req, res){
-  res.sendFile(path + '/frontend_kezdolap.html');
+  res.sendFile(__dirname + '/views/frontend_kezdolap.html');
 });
   
 app.use('*',function(req, res){
