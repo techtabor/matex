@@ -1,3 +1,3 @@
 # Matex
 
-After cloning, run ```npm init```.
+After cloning, run ```npm install```.
